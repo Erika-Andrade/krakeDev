@@ -4,6 +4,7 @@ calcularValorTotal = function () {
     let precioProducto; // SE UTILIZA PARA RECUPERAR EL PRECIO COMO FLOAT
     let cantidad; // SE UTILIZA PARA RECUPERAR LA CANTIDAD COMO INT
     let porcentajeDescuento;
+    let resumen;
 
     //variables para almacenar los retornos de las funciones
     let valorSubtotal;
@@ -90,7 +91,8 @@ calcularValorTotal = function () {
             Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
         Si funciona, hacer un commit
     */
-
+    resumen="Valor a pagar por "+cantidad+" "+nombreProducto+"  con "+valorDescuento+"% de descuento: USD "+valorTotal;
+    mostrarTexto("lblResumen",resumen);
 }
 limpiar = function () {
     /*
