@@ -8,14 +8,14 @@ calcularPromedioNotas=function(){
     mostrarTexto("lblPromedio","Promedio: "+promedio);
     if(promedio>0 && promedio<5){
         mostrarTexto("lblMensaje","REPROBADO");
-        mostrarImagen("imagen","./imagenes/fracaso.gif");
+        mostrarImagen("imagen","./imagenes/fracasos.gif");
 
     }else if(promedio>=5 && promedio<=8){
         mostrarTexto("lblMensaje","BUEN TRABAJO");
         mostrarImagen("imagen","./imagenes/buenTrabajo.gif");
     }else if(promedio>8 && promedio<=10){
         mostrarTexto("lblMensaje","EXCELENTE");
-        mostrarImagen("imagen","./imagenes/exito.gif");
+        mostrarImagen("imagen","./imagenes/exito_exc.gif");
     }else{
         mostrarTexto("lblMensaje","DATOS INCORRECTOS");
         mostrarImagen("imagen","./imagenes/datosIncorrectos.gif");
