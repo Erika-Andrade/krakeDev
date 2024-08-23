@@ -9,21 +9,31 @@
     <body>
         <div class="principal">
             <div class="titulo">
-                JUEGA PIEDRA PAPEL O TIJERA
+            JUEGA PIEDRA PAPEL O TIJERA
             </div>
-            <div class="imagen">
-                <img src="./imagenes/piedra.png" onclick="jugar('piedra');"/>
-                <img src="./imagenes/papel.png" onclick="jugar('papel');"/>
-                <img src="./imagenes/tijera.png" onclick="jugar('tijera');"/>
+            <div class="resultado">
+                <h3 id="lblWinPuntos"></h3>
             </div>
-            <div class="imagen">
-                <img src="" id="imgSelecCompu"/>
-            </div>
-            <div class="areaResultado">
-                <div class="resultado">
-                    <h3 id="lblGanador"></h3>
+            <div class="idk">
+                <div class="puntos">
+                    <h4 id="lblPuntosComp">Computadora: 0 </h4>
+                    <h4 id="lblPuntosUsuario">Usuario: 0 </h4>
+                    <div class="botones">
+                        <div class="contenedorBoton">
+                            <input type="button" value="NUEVA PARTIDA" class="estiloBoton" onclick="limpiar();"/>
+                        </div>
+                    </div>  
                 </div>
+                <div class="imagenes">
+                    <img src="./imagenes/piedra.png" onclick="jugar('piedra');" width="170px"/>
+                    <img src="./imagenes/papel.png" onclick="jugar('papel');" width="150px"/>
+                    <img src="./imagenes/tijera.png" onclick="jugar('tijera');" width="170px"/> 
+                </div>
+            </div>     
+            <div class="resultado">
+                <img src="" id="imgSelecCompu" width="150px"/>
+                <h3 id="lblGanador"></h3>
             </div>
-        </div>
+        </div>        
     </body>
 </html>
