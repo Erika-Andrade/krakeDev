@@ -57,3 +57,59 @@ validarEstructura=function(placa){
 
 
 }
+obtenerProvincia=function(placa){
+    let primeraLetra=placa.charAt(0);
+    let provincia;
+    if(primeraLetra=="A"){
+        provincia="AZUAY";
+    }else if(primeraLetra=="B"){
+        provincia="BOLIVAR";
+    }else if(primeraLetra=="U"){
+        provincia="CAÑAR";
+    }else if(primeraLetra=="C"){
+        provincia="CARCHI";
+    }else if(primeraLetra=="X"){
+        provincia="COTOPAXI";
+    }else if(primeraLetra=="H"){
+        provincia="CHIMBORAZO";
+    }else if(primeraLetra=="O"){
+        provincia="EL ORO";
+    }else if(primeraLetra=="E"){
+        provincia="ESMERALDAS";
+    }else if(primeraLetra=="W"){
+        provincia="GALAPAGOS";
+    }else if(primeraLetra=="G"){
+        provincia="GUAYAS";
+    }else if(primeraLetra=="I"){
+        provincia="IMBABURA";
+    }else if(primeraLetra=="L"){
+        provincia="LOJA";
+    }else if(primeraLetra=="R"){
+        provincia="LOS RIOS";
+    }else if(primeraLetra=="M"){
+        provincia="MANABI";
+    }else if(primeraLetra=="V"){
+        provincia="MORONA SANTIAGO";
+    }else if(primeraLetra=="N"){
+        provincia="NAPO";
+    }else if(primeraLetra=="S"){
+        provincia="PASTAZA";
+    }else if(primeraLetra=="P"){
+        provincia="PICHINCHA";
+    }else if(primeraLetra=="K"){
+        provincia="SUCUMBIOS";
+    }else if(primeraLetra=="Q"){
+        provincia="ORELLANA";
+    }else if(primeraLetra=="T"){
+        provincia="TUNGURAHUA";
+    }else if(primeraLetra=="Z"){
+        provincia="ZAMORA CHINCHIPE";
+    }else if(primeraLetra=="Y"){
+        provincia="SANTA ELENA";
+    }else{
+        provincia=null;
+    }
+    return provincia;
+
+
+}
