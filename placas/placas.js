@@ -24,3 +24,12 @@ validarPlaca=function(){
         mostrarTexto("lblErrores",erroresEstructura);
     }
 }
+limpiar=function(){
+    mostrarTextoEnCaja("txtPlaca","");
+    mostrarTexto("lblValidez","");
+    mostrarTexto("lblProvincia","");
+    mostrarTexto("lblTipo","");
+    mostrarTexto("lblDia","");
+    mostrarTexto("lblErrores","");
+
+}
