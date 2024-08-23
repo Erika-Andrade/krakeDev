@@ -131,3 +131,21 @@ obtenerTipoVehiculo=function(placa){
     }
     return tipoVehi;
 }
+obtenerDiaPicoYPlaca=function(placa){
+    let ultposicion=(placa.length)-1;
+    let ultimoCaracter=placa.charAt(ultposicion);
+    let dia;
+    if(ultimoCaracter==1 || ultimoCaracter==2){
+        dia="LUNES";
+    }else if(ultimoCaracter==3 || ultimoCaracter==4){
+        dia="MARTES";
+    }else if(ultimoCaracter==5 || ultimoCaracter==6){
+        dia="MIERCOLES";
+    }else if(ultimoCaracter==7 || ultimoCaracter==8){
+        dia="JUEVES";
+    }else if(ultimoCaracter==9 || ultimoCaracter==0){
+        dia="VIERNES";
+    }
+    return dia;
+}
+

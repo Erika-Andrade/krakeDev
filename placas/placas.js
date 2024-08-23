@@ -1,5 +1,5 @@
 validarPlaca=function(){
-    let placa,erroresEstructura,provincia,tipoVehi;
+    let placa,erroresEstructura,provincia,tipoVehi,diaPicoyPlaca;
     placa=recuperarTexto("txtPlaca");
     erroresEstructura=validarEstructura(placa);
     if(erroresEstructura===null){
@@ -16,6 +16,8 @@ validarPlaca=function(){
         }else{
             mostrarTexto("lblTipo","TIPO DE VEHICULO INCORRECTO")
         }
+        diaPicoyPlaca=obtenerDiaPicoYPlaca(placa);
+        mostrarTexto("lblDia","PICO Y PLACA: "+diaPicoyPlaca);
 
     }else{
         mostrarTexto("lblValidez","ESTRUCTURA INCORRECTA");
