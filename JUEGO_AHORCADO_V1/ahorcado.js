@@ -51,6 +51,7 @@ validar=function(letra){
     if(letrasEncontradas==0){
         alert("LA LETRA NO ES PARTE DE LA PALABRA.")
         errores+=1
+        mostrarAhorcado()
     }
 
 }
@@ -72,4 +73,24 @@ ingresarLetra=function(){
         }
 
 }
-
+mostrarAhorcado=function(){
+    if(errores==1){
+        mostrarImagen("ahorcadoImagen","ahorcado_01.png");
+    }else if(errores==2){
+        mostrarImagen("ahorcadoImagen","ahorcado_02.png");
+    }else if(errores==3){
+        mostrarImagen("ahorcadoImagen","ahorcado_03.png");
+    }else if(errores==4){
+        mostrarImagen("ahorcadoImagen","ahorcado_04.png");
+    }else if(errores==5){
+        mostrarImagen("ahorcadoImagen","ahorcado_05.png");
+    }else if(errores==6){
+        mostrarImagen("ahorcadoImagen","ahorcado_06.png");
+    }else if(errores==7){
+        mostrarImagen("ahorcadoImagen","ahorcado_07.png");
+    }else if(errores==8){
+        mostrarImagen("ahorcadoImagen","ahorcado_08.png");
+    }else if(errores==9){
+        mostrarImagen("ahorcadoImagen","ahorcado_09.png");
+    }
+}
