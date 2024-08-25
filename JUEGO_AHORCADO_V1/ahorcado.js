@@ -1,5 +1,5 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
-let palabraSecreta;
+let palabraSecreta,intentos=0,coincidencias=0,errores=0;
 esMayuscula=function(caracter){
     let ascCaracter=caracter.charCodeAt(0);
     if(ascCaracter>=65 && ascCaracter<=90){
@@ -22,6 +22,7 @@ guardarPalabra=function(){
         console.log(mensaje);
     }else{
         alert("Debe ingresar una palabra de 5 letras mayusculas.");
+
     }
 }
 mostrarLetra=function(letra,posicion){
@@ -39,21 +40,36 @@ mostrarLetra=function(letra,posicion){
 
 }
 validar=function(letra){
-    let letrasEncontradas;
+    let letrasEncontradas=0;
     for(let i=0;i<5;i++){
         if(palabraSecreta.charAt(i)==letra){
             mostrarLetra(letra,i);
             letrasEncontradas+=1;
+            coincidencias+=1;
         }
     }
+    if(letrasEncontradas==0){
+        alert("LA LETRA NO ES PARTE DE LA PALABRA.")
+        errores+=1
+    }
+
 }
 ingresarLetra=function(){
     let letra;
+    intentos+=1;
     letra=recuperarTexto("txtLetra");
         if(esMayuscula(letra)){
             validar(letra);
+            if(coincidencias==5){
+                alert("HA GANADO");
+            }
+            if(intentos==10){
+                alert("HA PERDIDO");
+            }
+                
         }else{
             alert("SOLO SE ACEPTAN MAYUSCULAS");
         }
+
 }
 
