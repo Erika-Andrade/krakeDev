@@ -24,3 +24,36 @@ guardarPalabra=function(){
         alert("Debe ingresar una palabra de 5 letras mayusculas.");
     }
 }
+mostrarLetra=function(letra,posicion){
+    if(posicion==0){
+        mostrarTexto("div0",letra);
+    }else if(posicion==1){
+        mostrarTexto("div1",letra);
+    }else if(posicion==2){
+        mostrarTexto("div2",letra);
+    }else if(posicion==3){
+        mostrarTexto("div3",letra);
+    }else if(posicion==4){
+        mostrarTexto("div4",letra);
+    }
+
+}
+validar=function(letra){
+    let letrasEncontradas;
+    for(let i=0;i<5;i++){
+        if(palabraSecreta.charAt(i)==letra){
+            mostrarLetra(letra,i);
+            letrasEncontradas+=1;
+        }
+    }
+}
+ingresarLetra=function(){
+    let letra;
+    letra=recuperarTexto("txtLetra");
+        if(esMayuscula(letra)){
+            validar(letra);
+        }else{
+            alert("SOLO SE ACEPTAN MAYUSCULAS");
+        }
+}
+
