@@ -78,28 +78,37 @@ body{
     align-items: center;
     justify-content: center;
 }
-tbody tr:nth-child(odd) {
-    background-color: #908efc;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #6a51cf;
-  }
+
   
   tbody tr {
     background-image: url(noise.png);
   }
   
   table {
-    background-color: #0b0c0c;
+    background-color: #eef3f3;
     width: 100%;
+    border-collapse: collapse;
   }
   td{
     text-align: center;
+    padding: 8px;
   }
   .areaTabla{
     margin-top: 20px;
   }
+  th{
+    background-color: #246355;
+    padding: 8px;
+    color:rgb(223, 243, 218);
+  }
+  tr:nth-child(even){
+    background-color: #ddd;
+  }
+  tr:hover{
+    background-color: #369681;
+    color:white;
+  }
+
 .estiloBoton:hover {
     background-color:white; 
     color: #217023;
