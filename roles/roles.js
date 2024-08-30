@@ -93,6 +93,12 @@ guardar=function(){
             }else{
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA "+empleado.cedula);
             }
+            deshabilitarComponente("txtCedula");
+            deshabilitarComponente("txtNombre");
+            deshabilitarComponente("txtApellido");
+            deshabilitarComponente("txtSueldo");
+
+            deshabilitarComponente("btnGuardar");
         }
 
     }
