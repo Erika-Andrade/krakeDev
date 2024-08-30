@@ -80,10 +80,6 @@ body{
 }
 
   
-  tbody tr {
-    background-image: url(noise.png);
-  }
-  
   table {
     background-color: #eef3f3;
     width: 100%;
