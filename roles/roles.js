@@ -38,12 +38,7 @@ mostrarEmpleados=function(){
     }
     contenidoTabla+="</table>";
     cmpTabla.innerHTML=contenidoTabla;
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-
-    deshabilitarComponente("btnGuardar");
+    deshabilitarCampos();
 }
 ejecutarNuevo=function(){
     habilitarComponente("txtCedula");
@@ -93,12 +88,7 @@ guardar=function(){
             }else{
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA "+empleado.cedula);
             }
-            deshabilitarComponente("txtCedula");
-            deshabilitarComponente("txtNombre");
-            deshabilitarComponente("txtApellido");
-            deshabilitarComponente("txtSueldo");
-
-            deshabilitarComponente("btnGuardar");
+            deshabilitarCampos();
         }
 
     }
@@ -149,4 +139,12 @@ esSueldoValido=function(sueldo){
     }
     return valido;
 
+}
+deshabilitarCampos=function(){
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+
+    deshabilitarComponente("btnGuardar");
 }
