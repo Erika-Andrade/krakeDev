@@ -4,6 +4,7 @@ let empleados = [
     {cedula:"1005342428",nombre:"ANA",apellido:"SUAREZ",sueldo:450.0}
 ]
 let esNuevo=false;
+let roles=[];
 mostrarOpcionEmpleado=function(){
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
@@ -14,6 +15,7 @@ mostrarOpcionRol=function(){
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
+    deshabilitarComponente("btnGuardarRol");
 }
 mostrarOpcionResumen=function(){
     mostrarComponente("divResumen");
@@ -216,6 +218,56 @@ calcularRol=function(){
             mostrarTexto("infoIESS",aporte);
             valorAPagar=calcularValorAPagar(sueldo,aporte,descuentos);
             mostrarTexto("infoPago",valorAPagar);
+            habilitarComponente("btnGuardarRol");
         }
     }
+}
+buscarRol=function(cedula){
+    let elementoRol,rolEncontrado=null;
+    for(let i=0;i<roles.length;i++){
+        elementoRol=roles[i];
+        if(elementoRol.cedula==cedula){
+            rolEncontrado=elementoRol;
+            break;
+        }
+    }
+    return rolEncontrado;
+}
+agregarRol=function(rol){
+    let existeRol;
+    existeRol=buscarRol(rol.cedula);
+    if(existeRol==null){
+        roles.push(rol);
+        alert("ROL AGREADO EXITOSAMENTE")
+        deshabilitarComponente("btnGuardarRol")
+    }else{
+        alert("YA EXISTE ROL CON LA CEDULA "+rol.cedula)
+        
+    }
+}
+calcularAporteEmpleador=function(sueldo){
+    let aporte;
+    aporte=sueldo*0.1115;
+    return aporte;
+}
+guardarRol=function(){
+    let pago=recuperarFloatDiv("infoPago");
+    let aporte=recuperarFloatDiv("infoIESS");
+    let nombre=recuperarTextoDiv("infoNombre");
+    let cedula=recuperarTextoDiv("infoCedula");
+    let sueldo=recuperarFloatDiv("infoSueldo");
+
+    let aporteEmpleador=calcularAporteEmpleador(sueldo);
+    
+
+    let rol={};
+    rol.cedula=cedula;
+    rol.nombre=nombre;
+    rol.sueldo=sueldo;
+    rol.valorAPagar=pago;
+    rol.aporteEmpleado=aporte;
+    rol.aporteEmpleador=aporteEmpleador;
+    agregarRol(rol);
+
+
 }
