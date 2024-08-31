@@ -189,7 +189,33 @@ buscarPorRol=function(){
         mostrarTexto("infoNombre",encontrado.nombre+" "+encontrado.apellido);
     }else{
         alert("EMPLEADO NO EXISTE")
+    }  
+}
+calcularAporteEmpleado=function(sueldo){
+    let aporte;
+    aporte=sueldo*0.0945;
+    return aporte;
+}
+calcularValorAPagar=function(sueldo,aporte,descuento){
+    let valorAPagar;
+    valorAPagar=sueldo-aporte-descuento;
+    return valorAPagar;
+}
+calcularRol=function(){
+    let sueldo=recuperarFloatDiv("infoSueldo");
+    let descuentos=recuperarFloat("txtDescuentos");
+    let aporte,valorAPagar;
+    if(isNaN(descuentos)){
+        mostrarTexto("lblErrorDescuentos","Debe ingresar un numero");
+        
+    }else{
+        if(descuentos<0 || descuentos>sueldo){
+            mostrarTexto("lblErrorDescuentos","El valor debe estar entre 0 y "+sueldo)
+        }else{
+            aporte=calcularAporteEmpleado(sueldo);
+            mostrarTexto("infoIESS",aporte);
+            valorAPagar=calcularValorAPagar(sueldo,aporte,descuentos);
+            mostrarTexto("infoPago",valorAPagar);
+        }
     }
-
-    
 }
