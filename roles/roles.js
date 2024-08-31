@@ -294,17 +294,21 @@ mostrarRoles=function(){
     cmpTabla.innerHTML=contenidoTabla;
 }
 mostrarTotales=function(){
-    let totalEmpleado=0,totalEmpleador=0,totalAPagar=0,rol;
+    let totalEmpleado=0,totalEmpleador=0,totalAPagar=0,rol,totalNomina;
     for(let i=0;i <roles.length;i++){
         rol=roles[i];
         totalEmpleado+=rol.aporteEmpleado;
         totalEmpleador+=rol.aporteEmpleador;
         totalAPagar+=rol.valorAPagar;
     }
+    totalNomina=(totalAPagar+totalEmpleado+totalEmpleador).toFixed(2);
     totalAPagar=totalAPagar.toFixed(2);
     totalEmpleado=totalEmpleado.toFixed(2);
     totalEmpleador=totalEmpleador.toFixed(2);
+
+    mostrarTexto("infoTotalNomina",totalNomina);
     mostrarTexto("infoTotalPago",totalAPagar);
     mostrarTexto("infoAporteEmpresa",totalEmpleador);
     mostrarTexto("infoAporteEmpleado",totalEmpleado);
+
 }
