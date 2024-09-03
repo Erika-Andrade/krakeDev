@@ -6,8 +6,8 @@
     <script src="orden.js"></script>
     
 </head>
-<body>
-    <div class="principal">
+<body onload="mostrarPersonas();">
+    <div class="principal" >
         <div class="titulo">
             PERSONAS
         </div>
@@ -29,10 +29,15 @@
                 <div class="error" id="lblEdadError"></div>
             </div>
         </div>
+
         <div class="botones">
             <div class="contenedorBoton">
                 <input type="button" value="GUARDAR" class="estiloBoton" onclick="agregarPersona();"/>
+
             </div>
+        </div>
+        <div id="tablaPersonas" class="areaTabla">
+
         </div>
         <div class="areaResultado">
             <div class="resultado">

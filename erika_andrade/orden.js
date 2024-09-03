@@ -27,6 +27,22 @@ agregarPersona=function(){
         nuevaPersona.edad=edad,
         personas.push(nuevaPersona);
         alert("PERSONA AGREGADA CORRECTAMENTE")
+        mostrarPersonas();
     }
 
+}
+mostrarPersonas=function(){
+    let cmpTabla=document.getElementById("tablaPersonas");
+    let contenidoTabla="<table><tr>"+
+    "<th>NOMBRE</th>"+
+    "<th>EDAD</th></tr>";
+    let elementoPersona;
+    for(let i=0;i <personas.length;i++){
+        elementoPersona=personas[i];
+        contenidoTabla+="<tr><td>"+elementoPersona.nombre+"</td>"
+        +"<td>"+elementoPersona.edad+"</td>"
+        +"</tr>"
+    }
+    contenidoTabla+="</table>";
+    cmpTabla.innerHTML=contenidoTabla;
 }
