@@ -52,10 +52,33 @@ encontrarMayor=function(){
     for(let i=1;i<personas.length;i++){
         elementoPersona=personas[i];
         console.log(elementoPersona.nombre+" "+elementoPersona.edad);
-
+        if(elementoPersona.edad>personaMayor.edad){
+            personaMayor=elementoPersona;
+        }
     }
+    return personaMayor;
 }
 determinarMayor=function(){
-    encontrarMayor();
-    
+    let mayor; 
+    mayor=encontrarMayor();
+    mostrarTexto("lblMayor",mayor.nombre+" es el mayor con "+mayor.edad+" de edad.")
+
+}
+encontrarMenor=function(){
+    let personaMenor=personas[0];
+    let elementoPersona;
+    for(let i=1;i<personas.length;i++){
+        elementoPersona=personas[i];
+        console.log(elementoPersona.nombre+" "+elementoPersona.edad);
+        if(elementoPersona.edad<personaMenor.edad){
+            personaMenor=elementoPersona;
+        }
+    }
+    return personaMenor;
+}
+determinarMenor=function(){
+    let menor; 
+    menor=encontrarMenor();
+    mostrarTexto("lblMenor",menor.nombre+" es el menor con "+menor.edad+" de edad.")
+
 }
