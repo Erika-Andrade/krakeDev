@@ -12,7 +12,7 @@ jugar=function(){
 
 }
 lanzarDado=function(){
-    let aleatorio,numeroMultiplicado, numeroEntero,velorDado;
+    let aleatorio,numeroMultiplicado, numeroEntero,valorDado;
     aleatorio=Math.random();//entre0 y 1
     numeroMultiplicado=aleatorio*6;
     numeroEntero=parseInt(numeroMultiplicado);//entre 0 y 5
